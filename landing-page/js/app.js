@@ -23,7 +23,8 @@
  * 
  */
 const sec = document.querySelectorAll('section');
-const menu = document.getElementById('navbar__list');
+// unorded list
+const ul = document.getElementById('navbar__list');
 const fragment = document.createDocumentFragment();
 
 /**
@@ -31,10 +32,12 @@ const fragment = document.createDocumentFragment();
  * Start Helper Functions
  * 
  */
-//to Creat the navigation bar
+//function to Creat the navigation bar
 function creatNav() {
     for (let s of sec) {
+        //section name
         let sName = s.getAttribute('data-nav');
+        //section link
         let sLink = s.getAttribute('id');
         //create an item for each one
         let List = document.createElement('li');
@@ -44,17 +47,18 @@ function creatNav() {
         fragment.appendChild(List);
     }
     //add listItem to the menu
-    menu.appendChild(fragment);
+    ul.appendChild(fragment);
 }
 
 
-//Gives the section viewed a different appearance
+//Gives the section viewed a different appearance (make the section active)
 function toggleActiveState() {
     for (let s of sec) {
+        //to know where the sec start
         let sPos = s.getBoundingClientRect();
         //Determines if section is in viewport
         if (sPos.top >= 0) {
-            //use toggle to add or remove this class 
+            //use toggle to add or remove this actie class 
             s.classList.toggle('your-active-class');
         }
     }
@@ -73,11 +77,14 @@ window.addEventListener('scroll', toggleActiveState);
 // Scroll to top of page
 let span = document.querySelector('.up');
 window.onscroll = function () {
+    //to show the button in the page if we scroll down
     this.scrollY >= 800 ? span.classList.add('show') : span.classList.remove('show');
 }
 span.onclick = function () {
+    //to scroll to the top of the page
     window.scrollTo({
         top: 0,
+        //to have a smooth scroll up
         behavior: "smooth"
     });
 
