@@ -22,7 +22,7 @@
  * Define Global Variables
  * 
  */
-let sec = document.querySelectorAll('section');
+const sec = document.querySelectorAll('section');
 const menu = document.getElementById('navbar__list');
 const fragment = document.createDocumentFragment();
 
@@ -62,39 +62,40 @@ function toggleActiveState() {
         }
     }
 
-    /**
-     * End Helper Functions
-     * Begin Main Functions
-     * 
-     */
+}
+/**
+ * End Helper Functions
+ * Begin Main Functions
+ * 
+ */
 
-    // build the nav
+// build the nav
 
-    creatNav();
-    // Add class 'active' to section when near top of viewport
-    window.addEventListener('scroll', toggleActiveState);
-    // Scroll to top of page
-    let span = document.querySelector('.up');
-    window.onscroll = function () {
-        this.scrollY >= 800 ? span.classList.add('show') : span.classList.remove('show');
-    }
-    span.onclick = function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+creatNav();
+// Add class 'active' to section when near top of viewport
+window.addEventListener('scroll', toggleActiveState);
+// Scroll to top of page
+let span = document.querySelector('.up');
+window.onscroll = function () {
+    this.scrollY >= 800 ? span.classList.add('show') : span.classList.remove('show');
+}
+span.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-    };
+};
 
-    /**
-     * End Main Functions
-     * Begin Events
-     * 
-     */
-    // Hide fixed navigation bar while not scrolling
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+ */
+// Hide fixed navigation bar while not scrolling
 
-    // Build menu 
+// Build menu 
 
-    // Scroll to section on link click
+// Scroll to section on link click
 
-    // Set sections as active
+// Set sections as active
