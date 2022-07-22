@@ -47,21 +47,17 @@ function creatNav() {
     menu.appendChild(fragment);
 }
 
-//Determines if section is in viewport
-function secInView(elem) {
-    let sPos = elem.getBoundingClientRect();
-    return (sPos.top >= 0);
-}
 
 //Gives the section viewed a different appearance
 function toggleActiveState() {
     for (let s of sec) {
-        if (secInView(s)) {
+        let sPos = s.getBoundingClientRect();
+        //Determines if section is in viewport
+        if (sPos.top >= 0) {
             //use toggle to add or remove this class 
             s.classList.toggle('your-active-class');
         }
     }
-
 }
 /**
  * End Helper Functions
