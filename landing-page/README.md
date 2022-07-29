@@ -20,11 +20,11 @@
 - [Demo-Preview](#demo-preview)
 - [Table of contents](#table-of-contents)
 - [Introduction](#introduction)
-- [Project description](#Project description)
-- [Technologies used](#Technologies used)
+- [Project description](#Project-description)
 - [Features](#features)
     - [Main features](#main-features)
     - [Additional Features](#additional-features)
+- [Technologies used](#Technologies-used)
 - [Installation](#installation)
 - [References](#references)
 
@@ -59,9 +59,9 @@ and then when you scroll down you can click the button to go to the top of the p
 
 # [Technologies used](#table-of-contents)
 
--Html
--css
--JavaScript
+- Html
+- css
+- JavaScript
 
 <br>
 
