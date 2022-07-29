@@ -32,40 +32,50 @@ const fragment = document.createDocumentFragment();
  * 
  */
 //to Creat the navigation bar
-function creatNav() {
+function creatNav(section) {
     for (let s of sec) {
-        let secName = s.getAttribute('data-nav');
-        let secLink = s.getAttribute('id');
+        let sName = s.getAttribute('data-nav');
+        let sLink = s.getAttribute('id');
         //create an item for each one
         let List = document.createElement('li');
         //add the text inside the li element 
-        List.innerHTML = `<a class="menu__link" href="#${secLink}">${secName}</a>`;
+        List.innerHTML = `<a class="menu__link" href="#${sLink}">${sName}</a>`;
+        // Scroll to section on link click
+        List.addEventListener('click', (evt) => {
+            evt.preventDefault();
+            s.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        });
         //add the item text 
-        fragment.appendChild(List);
-    }
+        fragment.appendChild(List);   
+    } 
     //add listItem to the menu
     menu.appendChild(fragment);
 }
 
 //Determines if section is in viewport
-function secInView(e) {
-    let secPos = e.getBoundingClientRect();
-    return (secPos.top >= 0);
+function secInView(elem) {
+    let sPos = elem.getBoundingClientRect();
+    return (sPos.top >= 0);
 }
 
 //Gives the section viewed a different appearance
 function toggleActiveState() {
-    for (let s of sec) {
-        if (secInView(s)) {
-            //use toggle to add or remove this class 
-            if (!s.classList.contains('your-active-class'))
-                s.classList.add('your-active-class');
-        } else {
-            s.classList.remove('your-active-class');
-        }
-    }
-}
+    const observer = new IntersectionObserver(inputs => {
+        inputs.forEach(input => {
+            input.target.classList.toggle('your-active-class', input.isIntersecting);
+        });
+    },
+        {
+            threshold: 0.7,
+        });
 
+    sec.forEach(section => {
+        observer.observe(section);
+    });
+}
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -79,15 +89,15 @@ creatNav();
 window.addEventListener('scroll', toggleActiveState);
 // Scroll to top of page
 let span = document.querySelector('.up');
-window.onscroll=function(){
-    this.scrollY>=800?span.classList.add('show'):span.classList.remove('show');
+window.onscroll = function () {
+    this.scrollY >= 800 ? span.classList.add('show') : span.classList.remove('show');
 }
-span.onclick=function(){
+span.onclick = function () {
     window.scrollTo({
-        top:0,
-        behavior:"smooth"
+        top: 0,
+        behavior: "smooth"
     });
-        
+
 };
 
 /**

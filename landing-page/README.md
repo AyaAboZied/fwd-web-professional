@@ -20,6 +20,8 @@
 - [Demo-Preview](#demo-preview)
 - [Table of contents](#table-of-contents)
 - [Introduction](#introduction)
+- [Project description](#Project description)
+- [Technologies used](#Technologies used)
 - [Features](#features)
     - [Main features](#main-features)
     - [Additional Features](#additional-features)
@@ -36,6 +38,13 @@ In this project, a dynamic navigation bar is required corresponding to sections 
 
 <br>
 
+# [Project description](#table-of-contents)
+
+This project is to add a new section and, when the section in the scroll view, Active class has some animation is added
+and then when you scroll down you can click the button to go to the top of the page again.
+
+<br>
+
 # [Features](#table-of-contents)
 
 ### Main features
@@ -48,6 +57,14 @@ In this project, a dynamic navigation bar is required corresponding to sections 
 
 <br>
 
+# [Technologies used](#table-of-contents)
+
+-Html
+-css
+-JavaScript
+
+<br>
+
 # [Installation](#table-of-contents)
 
 To use this project, just clone the repo on your device using the command below:
@@ -56,6 +73,7 @@ To use this project, just clone the repo on your device using the command below:
 ```git clone https://github.com/AyaAboZied/fwd-web-professional.git```
 Leave a star in GitHub and share this guide if you found this helpful.
 <br>
+
 # [References](#table-of-contents)
 - [Landing page project recap](https://nfpdiscussions.udacity.com/t/landing-page-project-recap/58293)
 - [Landing page tips](https://docs.google.com/presentation/d/1JsVWUrJmDcS2l7tDrTnaaJUqEmDSzz6GQnw34HUtu1A/edit?bsft_aaid=05789e3b-9a7b-4421-becb-22c268b7011f&bsft_eid=e80f12f0-9794-480c-b799-43084d2d8a52&bsft_clkid=3f70d336-29f1-4502-a236-c4bc9a18796a&bsft_uid=c083b9a7-577e-4e96-a309-345fdf32f87a&bsft_mid=09081aba-9563-4ba2-a945-9f3007b277c9&bsft_txnid=bf4f4bf0-3454-4b14-864e-944e2c0b8d89&bsft_mime_type=html&bsft_ek=2022-07-15T10%3A27%3A24Z&bsft_lx=1&bsft_tv=37#slide=id.g58d3b44f08_0_0)
