@@ -23,6 +23,7 @@
  * 
  */
 const sec = document.querySelectorAll('section');
+// unorded list
 const menu = document.getElementById('navbar__list');
 const fragment = document.createDocumentFragment();
 
@@ -31,10 +32,14 @@ const fragment = document.createDocumentFragment();
  * Start Helper Functions
  * 
  */
+
 //to Creat the navigation bar
-function creatNav(section) {
+//function to Creat the navigation bar
+function creatNav() {
     for (let s of sec) {
+        //section name
         let sName = s.getAttribute('data-nav');
+        //section link
         let sLink = s.getAttribute('id');
         //create an item for each one
         let List = document.createElement('li');
@@ -49,32 +54,26 @@ function creatNav(section) {
             });
         });
         //add the item text 
-        fragment.appendChild(List);   
-    } 
+        fragment.appendChild(List);
+    }
     //add listItem to the menu
     menu.appendChild(fragment);
 }
 
-//Determines if section is in viewport
-function secInView(elem) {
-    let sPos = elem.getBoundingClientRect();
-    return (sPos.top >= 0);
-}
-
-//Gives the section viewed a different appearance
+//Gives the section viewed a different appearance (make the section active)
 function toggleActiveState() {
     const observer = new IntersectionObserver(inputs => {
         inputs.forEach(input => {
             input.target.classList.toggle('your-active-class', input.isIntersecting);
+            document.querySelector(`.menu__link[href="#${input.target.id}"]`).classList.toggle('nav-active-class', input.isIntersecting);
         });
     },
         {
             threshold: 0.7,
         });
-
-    sec.forEach(section => {
-        observer.observe(section);
-    });
+    for (s of sec) {
+        observer.observe(s);
+    }
 }
 /**
  * End Helper Functions
@@ -90,24 +89,26 @@ window.addEventListener('scroll', toggleActiveState);
 // Scroll to top of page
 let span = document.querySelector('.up');
 window.onscroll = function () {
+    //to show the button in the page if we scroll down
     this.scrollY >= 800 ? span.classList.add('show') : span.classList.remove('show');
 }
 span.onclick = function () {
     window.scrollTo({
         top: 0,
-        behavior: "smooth"
-    });
+        //to have a smooth scroll up
+        behavior: "smooth",
+    })
+}
 
-};
 
 /**
  * End Main Functions
  * Begin Events
- * 
+ *
  */
 // Hide fixed navigation bar while not scrolling
 
-// Build menu 
+// Build menu
 
 // Scroll to section on link click
 
