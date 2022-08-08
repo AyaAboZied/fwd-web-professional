@@ -16,4 +16,4 @@ To get the project up and running I followed these steps:
 5. Set up a function that updated UI dynamically.
 
 ### Result 
-![About Page](https://github.com/AyaAboZied/fwd-web-professional/blob/main/weather-journal-app\website\Weather-Journal-App-About.png)
+![About Page](https://github.com/AyaAboZied/fwd-web-professional/blob/main/weather-journal-app\Weather-Journal-App-About.png)
