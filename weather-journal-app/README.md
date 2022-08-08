@@ -6,5 +6,14 @@ This project requires you to create an asynchronous web app that uses Web API an
 ## Instructions
 This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+### Building
+To get the project up and running I followed these steps:
+
+1. Setting up project environment, making sure have Node and packages installed, and included in server.js file.
+2. Added POST and GET routes to ensure correct retrieval of data from the server.
+3. Acquired API credentials from OpenWeatherMap website.
+4. Created async functions to fetch weather data and store it on my local server. 
+5. Set up a function that updated UI dynamically.
+
+### Result 
+![About Page](https://github.com/tem-nik/Project-Previews/blob/master/Weather-Journal-App-About.png)
